@@ -1,0 +1,26 @@
+---
+layout: default
+title: Write-ups
+description: Bug bounty write-ups, methodology notes and tooling posts.
+permalink: /writeups/
+---
+<section class="wrap wrap--narrow page">
+  <header class="page__header">
+    <h1 class="page__title">Write-ups</h1>
+    <p class="page__lede">
+      Disclosed findings, methodology and tooling notes. Write-ups about real programs are
+      published only once the program's disclosure policy allows it; until then the methodology
+      posts carry the lessons without the names.
+    </p>
+  </header>
+
+  {%- assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {%- for year in years %}
+  <h2 class="year">{{ year.name }}</h2>
+  <div class="cards cards--list">
+    {%- for post in year.items %}
+    {% include post-card.html post=post %}
+    {%- endfor %}
+  </div>
+  {%- endfor %}
+</section>

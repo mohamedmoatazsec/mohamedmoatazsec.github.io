@@ -1,0 +1,19 @@
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p class="site-footer__line">
+      <span class="brand__mark brand__mark--small" aria-hidden="true"></span>
+      {{ site.author.name }} &middot; Web &amp; API penetration testing &middot; Cairo, Egypt
+    </p>
+    <p class="site-footer__links">
+      <a href="https://github.com/{{ site.social.github }}" rel="me">GitHub</a>
+      <a href="https://www.linkedin.com/in/{{ site.social.linkedin }}" rel="me">LinkedIn</a>
+      <a href="https://hackerone.com/{{ site.social.hackerone }}" rel="me">HackerOne</a>
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    </p>
+    <p class="site-footer__note">
+      Everything here is published in line with each program's disclosure policy. Research is
+      performed only on assets I am authorised to test.
+    </p>
+  </div>
+</footer>
+<script src="{{ '/assets/js/theme.js' | relative_url }}" defer></script>
