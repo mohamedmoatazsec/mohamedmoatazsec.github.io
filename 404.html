@@ -13,11 +13,13 @@ sitemap: false
       has everything that's published.
     </p>
   </header>
-  <pre class="prose"><code>GET <span data-request-path>{{ page.url }}</span> HTTP/1.1
+  <div class="prose">
+<pre><code>GET <span data-request-path>{{ page.url }}</span> HTTP/1.1
 Host: mohamedmoatazsec.github.io
 
 HTTP/1.1 404 Not Found
 X-Hint: /writeups/</code></pre>
+  </div>
   <script>
     (function () {
       var el = document.querySelector("[data-request-path]");
