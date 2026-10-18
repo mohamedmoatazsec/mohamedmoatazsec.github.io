@@ -69,12 +69,12 @@ body_class: layout-home
     <div class="tool__body">
       <h3 class="tool__title"><a href="https://github.com/mohamedmoatazsec/SecureScope">SecureScope</a></h3>
       <p>
-        An open-source Python CLI that assesses a web application's security posture: security
-        headers, cookie flags, TLS, CORS, HTTP methods and recon, with HTML/JSON/CSV reports and
-        recommendations sorted by severity. It is the reconnaissance and configuration-review phase
-        of an assessment, made repeatable.
+        An open-source Python CLI that assesses a web application's security posture: a real CSP
+        evaluator, HSTS and cookie quality, TLS, CORS and HTTP methods, with every finding backed by
+        the evidence it saw, a grade per target, and SARIF/HTML/JSON reports. Built to run as the
+        first ten minutes of an assessment and as a CI gate that fails only on regressions.
       </p>
-      <p class="tool__meta"><span class="mono">pip install . &nbsp;&rarr;&nbsp; securescope example.com --html</span></p>
+      <p class="tool__meta"><span class="mono">pip install . &nbsp;&rarr;&nbsp; securescope example.com --fail-on high -f sarif -f html</span></p>
     </div>
   </article>
 </section>
