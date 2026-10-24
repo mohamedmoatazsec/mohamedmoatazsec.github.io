@@ -15,6 +15,12 @@ than it should.
 
 <!--more-->
 
+> **Update — October 2026:** SecureScope has since been rewritten. The current tool is **2.0** —
+> a proper finding model, a CSP evaluator, grades, SARIF output and a CI gate — described in
+> [SecureScope 2.0]({{ '/writeups/2026/securescope-2-0/' | relative_url }}). The HTML-injection
+> fix below still stands (in 2.0 it became a rule across every output); the version number and
+> `pip install .` command here predate the rewrite.
+
 ## The bug: a report that trusted the target
 
 SecureScope can write an HTML report. The 1.0 report writer did this:
