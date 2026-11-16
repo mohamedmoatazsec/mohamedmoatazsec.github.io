@@ -1,0 +1,27 @@
+---
+layout: default
+title: Not found
+permalink: /404.html
+sitemap: false
+---
+<section class="wrap wrap--narrow page">
+  <header class="page__header">
+    <p class="eyebrow">HTTP/1.1 404 Not Found</p>
+    <h1 class="page__title">That page doesn't exist.</h1>
+    <p class="page__lede">
+      Either the link is old or I moved the post. The <a href="{{ '/writeups/' | relative_url }}">write-ups index</a>
+      has everything that's published.
+    </p>
+  </header>
+  <pre class="prose"><code>GET <span data-request-path>{{ page.url }}</span> HTTP/1.1
+Host: mohamedmoatazsec.github.io
+
+HTTP/1.1 404 Not Found
+X-Hint: /writeups/</code></pre>
+  <script>
+    (function () {
+      var el = document.querySelector("[data-request-path]");
+      if (el && location.pathname) el.textContent = location.pathname;
+    })();
+  </script>
+</section>

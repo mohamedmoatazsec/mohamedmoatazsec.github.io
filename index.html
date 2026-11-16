@@ -1,0 +1,80 @@
+---
+layout: default
+title: Mohamed Moataz
+description: Write-ups, methodology and tooling from a web & API penetration tester and bug bounty researcher based in Cairo.
+body_class: layout-home
+---
+<section class="hero">
+  <div class="wrap hero__inner">
+    <p class="eyebrow">Web &amp; API penetration testing &middot; Bug bounty research</p>
+    <h1 class="hero__title">Find it. Prove it. <span class="soft">Help fix it.</span></h1>
+    <p class="hero__lede">
+      I'm Mohamed Moataz, a penetration tester and independent bug bounty researcher. This site is
+      where I write up what I find, how I found it, and what I'd tell the team that has to fix it.
+    </p>
+    <ul class="chips" aria-label="Credentials and platforms">
+      <li class="chip chip--cert">eWPTX</li>
+      <li class="chip chip--cert">eJPT</li>
+      <li class="chip">HackerOne</li>
+      <li class="chip">YesWeHack</li>
+      <li class="chip"><a href="https://github.com/mohamedmoatazsec/SecureScope">SecureScope</a></li>
+    </ul>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="{{ '/writeups/' | relative_url }}">Read the write-ups</a>
+      <a class="btn" href="{{ '/about/' | relative_url }}">About me</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="section__head">
+    <h2 class="section__title">Latest</h2>
+    <a class="section__more" href="{{ '/writeups/' | relative_url }}">All posts &rarr;</a>
+  </div>
+  <div class="cards">
+    {%- for post in site.posts limit: 6 %}
+    {% include post-card.html post=post %}
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="section__head">
+    <h2 class="section__title">How I work</h2>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <span class="step__num">01</span>
+      <h3 class="step__title">Find it</h3>
+      <p>Scope first. Then manual testing driven by how the application actually behaves: authentication, authorisation, business logic and the API underneath the UI.</p>
+    </div>
+    <div class="step">
+      <span class="step__num">02</span>
+      <h3 class="step__title">Prove it</h3>
+      <p>Nothing is reported until the full chain is reproducible, request to response, with the impact stated plainly. No "might be exploitable".</p>
+    </div>
+    <div class="step">
+      <span class="step__num">03</span>
+      <h3 class="step__title">Help fix it</h3>
+      <p>Remediation written for the people who own the code, not the triager. A fix they can ship beats a severity they can argue about.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="section__head">
+    <h2 class="section__title">Tooling</h2>
+  </div>
+  <article class="tool">
+    <div class="tool__body">
+      <h3 class="tool__title"><a href="https://github.com/mohamedmoatazsec/SecureScope">SecureScope</a></h3>
+      <p>
+        An open-source Python CLI that assesses a web application's security posture: security
+        headers, cookie flags, TLS, CORS, HTTP methods and recon, with HTML/JSON/CSV reports and
+        recommendations sorted by severity. It is the reconnaissance and configuration-review phase
+        of an assessment, made repeatable.
+      </p>
+      <p class="tool__meta"><span class="mono">pip install . &nbsp;&rarr;&nbsp; securescope example.com --html</span></p>
+    </div>
+  </article>
+</section>

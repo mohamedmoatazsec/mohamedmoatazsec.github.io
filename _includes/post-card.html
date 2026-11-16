@@ -1,0 +1,24 @@
+{%- comment -%} Usage: {% include post-card.html post=post %} {%- endcomment -%}
+{%- assign p = include.post -%}
+{%- assign words = p.content | number_of_words -%}
+{%- assign minutes = words | divided_by: 200 | plus: 1 -%}
+<article class="card">
+  <div class="card__meta">
+    <time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%b %-d, %Y" }}</time>
+    <span class="card__dot" aria-hidden="true"></span>
+    <span>{{ minutes }} min read</span>
+    {%- if p.report and p.report.severity %}
+    <span class="card__dot" aria-hidden="true"></span>
+    <span class="sev sev--{{ p.report.severity | downcase }}">{{ p.report.severity }}</span>
+    {%- endif %}
+  </div>
+  <h3 class="card__title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+  <p class="card__excerpt">{{ p.excerpt | strip_html | strip_newlines | truncate: 180 }}</p>
+  {%- if p.tags.size > 0 %}
+  <ul class="tags" aria-label="Tags">
+    {%- for tag in p.tags %}
+    <li>{{ tag }}</li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+</article>

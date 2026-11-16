@@ -1,0 +1,75 @@
+# Site
+title: Mohamed Moataz
+tagline: Web & API penetration testing, bug bounty write-ups and tooling
+description: >-
+  Notes from a web & API penetration tester and bug bounty researcher: write-ups,
+  methodology and the tooling behind them.
+url: "https://mohamedmoatazsec.github.io"
+baseurl: ""
+lang: en
+timezone: Africa/Cairo
+
+author:
+  name: Mohamed Moataz
+  url: https://mohamedmoatazsec.github.io
+
+# Used by jekyll-seo-tag for the Person structured data, and by the templates
+# for profile links.
+social:
+  name: Mohamed Moataz
+  links:
+    - https://github.com/mohamedmoatazsec
+    - https://www.linkedin.com/in/mohamedmoatazsec
+    - https://hackerone.com/mohamedmoatazsec
+  github: mohamedmoatazsec
+  linkedin: mohamedmoatazsec
+  hackerone: mohamedmoatazsec
+
+logo: /assets/img/apple-touch-icon.png
+
+# Build
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+highlighter: rouge
+permalink: /writeups/:year/:title/
+excerpt_separator: "<!--more-->"
+future: false
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+
+feed:
+  path: feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+    values:
+      layout: page
+      # Default social-sharing card for every page that does not set its own.
+      image:
+        path: /assets/img/social-card.png
+        width: 1200
+        height: 630
+        alt: "Find it. Prove it. Help fix it. — mohamedmoatazsec.github.io"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - node_modules
+  - vendor
+  - .jekyll-cache
+  - preview

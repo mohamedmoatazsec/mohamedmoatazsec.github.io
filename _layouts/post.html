@@ -1,0 +1,71 @@
+---
+layout: default
+---
+{%- assign words = content | number_of_words -%}
+{%- assign minutes = words | divided_by: 200 | plus: 1 -%}
+<article class="wrap wrap--narrow post">
+  <header class="post__header">
+    <p class="post__kicker">
+      {%- if page.report %}Write-up{% elsif page.category %}{{ page.category }}{% else %}Post{% endif -%}
+    </p>
+    <h1 class="post__title">{{ page.title }}</h1>
+    {%- if page.description %}
+    <p class="post__lede">{{ page.description }}</p>
+    {%- endif %}
+    <div class="post__meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      <span class="card__dot" aria-hidden="true"></span>
+      <span>{{ minutes }} min read</span>
+      {%- if page.tags.size > 0 %}
+      <span class="card__dot" aria-hidden="true"></span>
+      <ul class="tags tags--inline" aria-label="Tags">
+        {%- for tag in page.tags %}
+        <li>{{ tag }}</li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </div>
+  </header>
+
+  {%- if page.report %}
+  <aside class="report" aria-label="Report summary">
+    <h2 class="report__title">Report summary</h2>
+    <dl class="report__grid">
+      {%- if page.report.program %}<dt>Program</dt><dd>{{ page.report.program }}</dd>{% endif %}
+      {%- if page.report.platform %}<dt>Platform</dt><dd>{{ page.report.platform }}</dd>{% endif %}
+      {%- if page.report.vulnerability %}<dt>Vulnerability</dt><dd>{{ page.report.vulnerability }}</dd>{% endif %}
+      {%- if page.report.severity %}<dt>Severity</dt><dd><span class="sev sev--{{ page.report.severity | downcase }}">{{ page.report.severity }}</span>{% if page.report.cvss %} <span class="muted">CVSS {{ page.report.cvss }}</span>{% endif %}</dd>{% endif %}
+      {%- if page.report.status %}<dt>Status</dt><dd>{{ page.report.status }}</dd>{% endif %}
+      {%- if page.report.reported %}<dt>Reported</dt><dd>{{ page.report.reported }}</dd>{% endif %}
+      {%- if page.report.resolved %}<dt>Resolved</dt><dd>{{ page.report.resolved }}</dd>{% endif %}
+      {%- if page.report.disclosed %}<dt>Disclosed</dt><dd>{{ page.report.disclosed }}</dd>{% endif %}
+      {%- if page.report.bounty %}<dt>Bounty</dt><dd>{{ page.report.bounty }}</dd>{% endif %}
+    </dl>
+  </aside>
+  {%- endif %}
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  <footer class="post__footer">
+    <p>
+      Found this useful or spotted a mistake?
+      <a href="https://www.linkedin.com/in/{{ site.social.linkedin }}">Message me on LinkedIn</a>.
+    </p>
+    <nav class="post__nav" aria-label="Adjacent posts">
+      {%- if page.previous %}
+      <a class="post__nav-link" href="{{ page.previous.url | relative_url }}" rel="prev">
+        <span class="muted">Older</span>
+        <span>{{ page.previous.title }}</span>
+      </a>
+      {%- endif %}
+      {%- if page.next %}
+      <a class="post__nav-link post__nav-link--next" href="{{ page.next.url | relative_url }}" rel="next">
+        <span class="muted">Newer</span>
+        <span>{{ page.next.title }}</span>
+      </a>
+      {%- endif %}
+    </nav>
+  </footer>
+</article>
