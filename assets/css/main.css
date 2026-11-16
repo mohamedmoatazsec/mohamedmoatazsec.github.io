@@ -135,7 +135,7 @@ img, svg, video { max-width: 100%; height: auto; }
 .brand__mark { width: 11px; height: 11px; border-radius: 3px; background: var(--accent); box-shadow: 0 0 14px var(--accent-soft), 0 0 6px rgba(242,181,68,0.45); flex: none; }
 .brand__mark--small { width: 8px; height: 8px; display: inline-block; vertical-align: middle; margin-right: 8px; }
 .site-nav { display: flex; align-items: center; gap: 4px; }
-.site-nav a { color: var(--fg-muted); padding: 8px 10px; border-radius: 6px; font-size: 0.95rem; font-weight: 500; }
+.site-nav a { color: var(--fg-muted); padding: 8px 10px; border-radius: 6px; font-size: 0.95rem; font-weight: 500; white-space: nowrap; flex: none; }
 .site-nav a:hover { color: var(--fg); background: var(--accent-soft); text-decoration: none; }
 .site-nav a[aria-current="page"] { color: var(--fg); }
 .theme-toggle { margin-left: 6px; width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--line); background: transparent; color: var(--fg-muted); cursor: pointer; display: inline-grid; place-items: center; }
@@ -279,11 +279,18 @@ img, svg, video { max-width: 100%; height: auto; }
 .site-footer__note { color: var(--fg-faint); font-size: 0.85rem; max-width: 70ch; }
 
 /* ---------- responsive ---------- */
+.nowrap { white-space: nowrap; }
+
 @media (max-width: 720px) {
   body { font-size: 1rem; }
   .site-header__inner { flex-wrap: wrap; min-height: 56px; padding-block: 8px; }
-  .site-nav { width: 100%; justify-content: flex-start; overflow-x: auto; }
+  .site-nav { width: 100%; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; }
+  .site-nav::-webkit-scrollbar { display: none; }
   .site-nav a { padding: 6px 8px; font-size: 0.9rem; }
+  .theme-toggle { flex: none; }
+  .eyebrow { font-size: 0.72rem; letter-spacing: 0.14em; }
+  .post__meta .card__dot:last-of-type { display: none; }
+  .post__meta .tags--inline { width: 100%; margin-top: 4px; }
   .hero__inner { padding-left: calc(max(20px, env(safe-area-inset-left, 0px)) + 16px); }
   .post__nav { grid-template-columns: 1fr; }
   .post__nav-link--next { grid-column: auto; text-align: left; }
