@@ -13,7 +13,7 @@
     {%- endif %}
   </div>
   <h3 class="card__title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
-  <p class="card__excerpt">{{ p.excerpt | strip_html | strip_newlines | truncate: 180 }}</p>
+  <p class="card__excerpt">{{ p.excerpt | strip_html | normalize_whitespace | truncate: 180 }}</p>
   {%- if p.tags.size > 0 %}
   <ul class="tags" aria-label="Tags">
     {%- for tag in p.tags %}
