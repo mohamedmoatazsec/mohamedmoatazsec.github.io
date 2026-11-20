@@ -1,7 +1,7 @@
 ---
 title: "The read-only token that saw the quarterly numbers first"
 description: A non-expiring CMS auth token was hard-coded in a public JavaScript bundle. It was read-only — but scoped to the whole corporate asset store, so it could list draft quarterly reports uploaded to the CMS before their market-regulated release.
-date: 2026-11-20 23:00:00 +0200
+date: 2026-11-20 20:45:00 +0200
 category: Write-up
 tags: [secrets-in-code, information-disclosure, access-control, scope, api]
 report:
