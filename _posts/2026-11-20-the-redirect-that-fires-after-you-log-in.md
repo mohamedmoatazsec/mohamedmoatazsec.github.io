@@ -1,7 +1,7 @@
 ---
 title: "The redirect that fires after you log in"
 description: A procurement login page read a 'pagerefer' value from the URL and, on a successful login, assigned it straight to location.href with no validation — turning a link to the real login page into DOM XSS or an open redirect that triggers the moment the victim signs in.
-date: 2026-11-20 22:45:00 +0200
+date: 2026-11-20 20:30:00 +0200
 category: Write-up
 tags: [dom-xss, open-redirect, client-side, authentication, logic-flaw]
 report:
