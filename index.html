@@ -18,6 +18,7 @@ body_class: layout-home
       <li class="chip">HackerOne</li>
       <li class="chip">YesWeHack</li>
       <li class="chip"><a href="https://github.com/mohamedmoatazsec/SecureScope">SecureScope</a></li>
+      <li class="chip"><a href="https://github.com/mohamedmoatazsec/mintmap">MintMap</a></li>
     </ul>
     <div class="hero__actions">
       <a class="btn btn--primary" href="{{ '/writeups/' | relative_url }}">Read the write-ups</a>
@@ -75,6 +76,19 @@ body_class: layout-home
         first ten minutes of an assessment and as a CI gate that fails only on regressions.
       </p>
       <p class="tool__meta"><span class="mono">pip install securescope &nbsp;&rarr;&nbsp; securescope example.com --fail-on high -f sarif -f html</span></p>
+    </div>
+  </article>
+  <article class="tool">
+    <div class="tool__body">
+      <h3 class="tool__title"><a href="https://github.com/mohamedmoatazsec/mintmap">MintMap</a></h3>
+      <p>
+        An experimental Python tool that maps the code paths which create a login session or
+        credential in a Django app. It stores the paths it finds in a human-reviewed
+        <span class="mono">mintmap.lock</span>, then fails CI when a change alters a credential
+        path or downgrades the evidence behind it &mdash; so a new way to authenticate has to pass
+        review instead of shipping unnoticed.
+      </p>
+      <p class="tool__meta"><span class="mono">pip install mintmap &nbsp;&rarr;&nbsp; mintmap diff path/to/django/project</span></p>
     </div>
   </article>
 </section>
