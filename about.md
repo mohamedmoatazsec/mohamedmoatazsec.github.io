@@ -31,9 +31,11 @@ longer version is in [How I document a finding]({{ '/writeups/2026/the-proof-cha
 ## Tooling
 
 Burp Suite, Nmap, SQLMap, ffuf and Gobuster, Metasploit, Wireshark, Kali Linux, and Python for
-everything that should be repeatable. The repeatable parts became
-[SecureScope](https://github.com/mohamedmoatazsec/SecureScope), an open-source web security
-posture assessment CLI.
+everything that should be repeatable. The repeatable parts became two open-source tools:
+[SecureScope](https://github.com/mohamedmoatazsec/SecureScope), a web security posture
+assessment CLI, and [MintMap](https://github.com/mohamedmoatazsec/mintmap), an experimental
+tool that maps the code paths which create a login session or credential in a Django app and
+enforces that reviewed map in CI.
 
 ## Background
 
